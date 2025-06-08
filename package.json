@@ -8,6 +8,8 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@farcaster/auth-kit": "^0.8.1",
+    "@farcaster/core": "^0.16.5",
     "vite": "^6.2.2"
   }
 }
