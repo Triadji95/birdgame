@@ -5,27 +5,86 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Farcaster Bird Jump Game</title>
+    
+    <!-- Farcaster Frame Meta Tags -->
     <meta property="fc:frame" content="vNext" />
     <meta property="fc:frame:image" content="/preview.png" />
     <meta property="fc:frame:button:1" content="Play Game" />
+    <meta property="fc:frame:button:2" content="Share Score" />
     <meta property="fc:frame:post_url" content="/api/game" />
+    <meta property="fc:frame:input:text" content="Enter your name" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Bird Jump - Farcaster Mini Game" />
+    <meta property="og:description" content="Test your reflexes in this addictive bird jumping game! Connect with Farcaster to share your scores." />
+    <meta property="og:image" content="/preview.png" />
+    <meta property="og:url" content="/" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#667eea" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Bird Jump" />
   </head>
   <body>
     <div id="app">
+      <div id="loading" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner">
+          <div class="spinner"></div>
+          <p>Loading...</p>
+        </div>
+      </div>
+      
       <div id="gameContainer">
         <h1>🐦 Farcaster Bird Jump</h1>
+        
+        <div id="challenge" style="display: none;"></div>
+        
         <div id="farcasterAuth">
-          <button id="connectBtn">Connect with Farcaster</button>
+          <button id="connectBtn" class="auth-btn">Connect with Farcaster</button>
           <div id="userInfo" style="display: none;"></div>
         </div>
+        
+        <div id="walletInfo" style="display: none;"></div>
+        
         <div id="gameArea">
-          <canvas id="gameCanvas" width="400" height="600"></canvas>
-          <div id="gameUI">
+          <div id="gameStats">
             <div id="score">Score: 0</div>
-            <button id="startBtn">Start Game</button>
-            <div id="instructions">Press SPACE or click to jump!</div>
+            <div id="highScore">High Score: 0</div>
+          </div>
+          
+          <canvas id="gameCanvas" width="400" height="600"></canvas>
+          
+          <div id="gameUI">
+            <button id="startBtn" class="game-btn primary">Start Game</button>
+            <button id="shareBtn" class="game-btn secondary">Share Score</button>
+            <div id="instructions">
+              <p>🖱️ Click or press SPACE to jump!</p>
+              <p>📱 Touch screen to jump on mobile</p>
+            </div>
           </div>
         </div>
+        
+        <div id="gameFeatures">
+          <div class="feature">
+            <h3>🎮 Features</h3>
+            <ul>
+              <li>🔗 Connect with Farcaster</li>
+              <li>💳 Wallet integration</li>
+              <li>📤 Share scores directly</li>
+              <li>📳 Haptic feedback</li>
+              <li>🏆 Challenge friends</li>
+              <li>💾 Local high scores</li>
+            </ul>
+          </div>
+        </div>
+        
+        <footer>
+          <p>Made with ❤️ for the Farcaster community</p>
+          <p>
+            <a href="https://miniapps.farcaster.xyz/" target="_blank">Learn about Farcaster Mini Apps</a>
+          </p>
+        </footer>
       </div>
     </div>
     <script type="module" src="/main.js"></script>

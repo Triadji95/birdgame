@@ -8,8 +8,10 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@coinbase/wallet-sdk": "^4.3.4",
     "@farcaster/auth-kit": "^0.8.1",
     "@farcaster/core": "^0.16.5",
+    "viem": "^2.30.6",
     "vite": "^6.2.2"
   }
 }
